@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row pt-3">
     <div class="col-6">
-      <h4>Student Portal</h4>
+      <h4>Студенческий портал</h4>
     </div>
     <div class="col-6 text-end">
-      <button class="btn btn-outline-success">Add new</button>
+      <button class="btn btn-outline-success" (click)="openModal()">
+        Добавить
+      </button>
     </div>
   </div>
   <div class="row">
@@ -12,17 +14,43 @@
       <div class="card">
         <div class="card-header">
           <div class="row">
-            <div class="col-6">Student Name</div>
-            <div class="col-6 text-end">Mobile No</div>
+            <div class="col-6">Имя студента</div>
+            <div class="col-6 text-end">Телефон</div>
           </div>
         </div>
         <div class="card-body">
-          <p>City</p>
-          <p>Address</p>
+          <p>Город</p>
+          <p>Адресс</p>
         </div>
         <div class="card-footer text-center">
           <p>Email</p>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="myModal" #myModal>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Добавить нового студента</h4>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-6">
+            <label for="">Имя</label>
+            <input type="text" class="form-control-sm" placeholder="Имя" />
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="closeModal()">
+          Close
+        </button>
       </div>
     </div>
   </div>
